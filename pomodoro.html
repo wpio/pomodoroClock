@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="pomodoro.css">
+
+</head>
+
+<body>
+    <audio id="myAudio">
+
+        <source src="alarm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="jumbotron ">
+
+        <div class="row" id='visor'>
+            <div id="viewer" class="col-lg-6">25:00</div>
+            <div class='col-lg-2 col-4 center' style="text-align: center;">
+                <button class='btn' id='play' style="padding:0;" onclick="play()"><i style="text-align: center;"
+                        class="fa fa-play fa-4x" aria-hidden="true"></i></button>
+            </div>
+            <div class='col-lg-2 col-4 center' style="text-align: center;">
+                <button class='btn' id='pause' style="padding:0;"><i class="fa fa-pause fa-4x"
+                        aria-hidden="true"></i></button>
+            </div>
+            <div class='col-lg-2 col-4 center' style="text-align: center;">
+                <button class='btn' id='reStart' style="padding:0;" onclick="reStart()"><i class="fa fa-repeat fa-4x"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <button class="btn  col-lg-12 btn btn-info" data-toggle="collapse" data-target="#settings">
+            <i class="fa fa-cog "></i>
+            <span> Settings</span>
+        </button>
+
+        <div class='row collapse  justify-content-center' id='settings' style="background-color: white; ">
+
+            <div class='col-lg-2 col-2 '>
+                <button class="btn btn-outline-danger col-lg-12" id='pomodoroButton' style="border-radius: 40px;"
+                    onclick="setMode('pomodoro')"><span style="text-align: center; margin:0; ">Pomodoro</span></button>
+                <button class="btn  col-lg-12" id='plusPomodoro' onclick="setTimers('plusPomodoro')"><i
+                        class="fa fa-chevron-up fa-lg"></i></button>
+                <input id='valorPomodoro' class='col-lg-12' type="number" value="25" min="0" max="60" step="1" />
+                <button class="btn col-lg-12" id='minusPomodoro' onclick="setTimers('minusPomodoro')"><i
+                        class="fa fa-chevron-down fa-lg"></i></button>
+            </div>
+            <div class='col-lg-2 col-2'>
+                <button class="btn btn-outline-info col-lg-11" style="border-radius: 40px;" onclick="setMode('short')">
+                    <p style="text-align: center;margin:0;">Short Break</p>
+                </button>
+                <button class="btn col-lg-12" id='plusShort' onclick="setTimers('plusShort')"><i
+                        class="fa fa-chevron-up fa-lg"></i></button>
+                <input id='valorShort' class='col-lg-12' type="number" value="5" min="0" max="60" step="1" />
+                <button class="btn col-lg-12" id='minusShort' onclick="setTimers('minusShort')"><i
+                        class="fa fa-chevron-down fa-lg"></i></button>
+            </div>
+            <div class='col-lg-2 col-2'>
+                <button class="btn btn-outline-success col-lg-11" style="border-radius: 40px;"
+                    onclick="setMode('long')">
+                    <p style="text-align: center;margin:0;">Long Break</p>
+                </button>
+                <button class="btn col-lg-12" id='plusLong' onclick="setTimers('plusLong')"><i
+                        class="fa fa-chevron-up fa-lg"></i></button>
+                <input id='valorLong' class='col-lg-12' type="number" value="10" min="0" max="60" step="1" />
+                <button class="btn col-lg-12" id='minusLong' onclick="setTimers('minusLong')"><i
+                        class="fa fa-chevron-down fa-lg"></i></button>
+            </div>
+
+        </div>
+        <div>
+            <input type="checkbox" id="checkBox"><span style="color: white;"> Iniciar próxima sessão
+                automaticamente?</span>
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>
+
+<script src="pomodoro.js"></script>

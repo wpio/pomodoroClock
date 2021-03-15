@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#viewer {
+    font-family: Calibri, Arial;
+    font-weight: 500;
+    font-size: 75px;
+
+
+    color: white;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(240, 91, 86);
+}
+
+.jumbotron {
+    background-color: rgb(255, 255, 255, 0.2);
+
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    border: none;
+    background-color: transparent;
+
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Calibri, Arial;
+
+    font-size: 30px;
+}
+
+
+
+.center {
+    margin: auto;
+    width: 60%;
+
+    padding: 10px;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+#settings {
+    margin: 0px;
+    padding-top: 15px;
+}
+
+input[type=checkbox] {
+
+    -ms-transform: scale(2);
+    /* IE */
+    -moz-transform: scale(2);
+    /* FF */
+    -webkit-transform: scale(2);
+    /* Safari and Chrome */
+    -o-transform: scale(2);
+    /* Opera */
+    transform: scale(2);
+    padding: 10px;
+    margin: 15px;
+}
